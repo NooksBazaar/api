@@ -1,0 +1,5 @@
+{
+  "name": "mongo",
+  "connector": "mongodb",
+  "url": "mongodb://root:r00t@127.0.0.1:27017/bazaar?authSource=admin&useUnifiedTopology=true"
+}
