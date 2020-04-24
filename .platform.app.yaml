@@ -23,4 +23,3 @@ relationships:
 web:
   commands:
     start: "node -r source-map-support/register index.js"
-
