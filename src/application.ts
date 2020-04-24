@@ -39,6 +39,14 @@ export class NooksBazaarApplication extends BootMixin(
         nested: true,
       },
     };
+
+    if (process.env.MONGO_URL) {
+      this.bind('datasources.config.mongo').to({
+        name: 'mongo',
+        connector: 'mongodb',
+        url: process.env.MONGO_URL,
+      });
+    }
   }
 
   async migrateSchema(options?: SchemaMigrationOptions) {
