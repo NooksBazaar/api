@@ -28,5 +28,5 @@ hooks:
   build: |
     npm install
     npm run build
-    sed -i 's/root:r00t/main:main/g' dist/datasources/mongo.datasource.config.json
+    sed -i 's/root:r00t@127.0.0.1/main:main@mongodatabase.internal/g' dist/datasources/mongo.datasource.config.json
     sed -i 's/admin/main/g' dist/datasources/mongo.datasource.config.json
