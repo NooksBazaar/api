@@ -19,6 +19,7 @@ if (require.main === module) {
         setServersFromRequest: true,
       },
     },
+    autoMigrate: JSON.parse(process.env.AUTO_MIGRATE || 'true'),
   };
   application.main(config).catch(err => {
     console.error('Cannot start the application.', err);
