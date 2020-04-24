@@ -8,7 +8,7 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=10"
+    "node": "^12"
   },
   "scripts": {
     "build": "lb-tsc",
@@ -27,8 +27,9 @@
     "docker:build": "docker build -t nooks-bazaar-api .",
     "docker:run": "docker run -p 3000:3000 -d nooks-bazaar-api",
     "migrate": "node ./dist/migrate",
-    "prestart": "npm run build",
-    "start": "AUTO_MIGRATE=false node -r source-map-support/register .",
+    "predev": "npm run build",
+    "dev": "AUTO_MIGRATE=false node -r source-map-support/register .",
+    "start": "node -r source-map-support/register .",
     "clean": "lb-clean dist *.tsbuildinfo .eslintcache"
   },
   "repository": {
