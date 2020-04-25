@@ -458,6 +458,9 @@ export class Item extends Entity implements AcdbItem {
   })
   buy?: number;
 
+  @property.array(String)
+  source?: string[];
+
   constructor(data?: Partial<Item>) {
     super(data);
   }
