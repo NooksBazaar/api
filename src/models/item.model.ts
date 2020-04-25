@@ -17,7 +17,6 @@ import {
   SeasonalAvailability,
   SecondaryShape,
   Size,
-  Source,
   SourceSheet,
   SpeakerType,
   Style,
@@ -239,7 +238,7 @@ export class Item extends Entity implements AcdbItem {
       enum: enumValues(SeasonalAvailability),
     },
   })
-  seasonalAvailability?: SeasonalAvailability | null;
+  seasonalAvailability?: SeasonalAvailability;
 
   @property({
     type: String,
@@ -458,13 +457,6 @@ export class Item extends Entity implements AcdbItem {
     type: Number,
   })
   buy?: number;
-
-  @property.array(String, {
-    jsonSchema: {
-      enum: enumValues(Source),
-    },
-  })
-  source?: Source[];
 
   constructor(data?: Partial<Item>) {
     super(data);
