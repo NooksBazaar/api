@@ -1,21 +1,30 @@
 import {Entity, model, property} from '@loopback/repository';
 import {
-  ActiveHour, ActiveMonths,
+  ActiveHour,
+  ActiveMonths,
   Catalog,
   Category,
-  CeilingType, Color,
-  CurtainType, Gender,
+  CeilingType,
+  Color,
+  CurtainType,
+  Gender,
   Item as AcdbItem,
   LightingType,
-  PaneType, Personality,
-  PrimaryShape, Rarity, SeasonalAvailability,
+  PaneType,
+  Personality,
+  PrimaryShape,
+  Rarity,
+  SeasonalAvailability,
   SecondaryShape,
-  Size, Source, SourceSheet,
+  Size,
+  Source,
+  SourceSheet,
   SpeakerType,
   Style,
   Variant,
   Version,
-  VfxType, Weather,
+  VfxType,
+  Weather,
   WindowColor,
   WindowType,
 } from '@nooksbazaar/acdb/all';
@@ -49,7 +58,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(SourceSheet),
-    }
+    },
   })
   sourceSheet: SourceSheet;
 
@@ -82,7 +91,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(Size),
-    }
+    },
   })
   size?: Size;
 
@@ -95,7 +104,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(Version),
-    }
+    },
   })
   version?: Version;
 
@@ -113,7 +122,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(SpeakerType),
-    }
+    },
   })
   speakerType?: SpeakerType | null;
 
@@ -121,7 +130,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(LightingType),
-    }
+    },
   })
   lightingType?: LightingType | null;
 
@@ -129,7 +138,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(Catalog),
-    }
+    },
   })
   catalog?: Catalog;
 
@@ -165,7 +174,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(VfxType),
-    }
+    },
   })
   vfxType?: VfxType | null;
 
@@ -173,7 +182,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(WindowColor),
-    }
+    },
   })
   windowType?: WindowType | null;
 
@@ -181,7 +190,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(WindowColor),
-    }
+    },
   })
   windowColor?: WindowColor | null;
 
@@ -189,7 +198,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(PaneType),
-    }
+    },
   })
   paneType?: PaneType | null;
 
@@ -197,7 +206,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(CurtainType),
-    }
+    },
   })
   curtainType?: CurtainType | null;
 
@@ -210,7 +219,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(CeilingType),
-    }
+    },
   })
   ceilingType?: CeilingType | null;
 
@@ -228,7 +237,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(SeasonalAvailability),
-    }
+    },
   })
   seasonalAvailability?: SeasonalAvailability | null;
 
@@ -236,7 +245,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(Style),
-    }
+    },
   })
   style?: Style;
 
@@ -244,7 +253,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(PrimaryShape),
-    }
+    },
   })
   primaryShape?: PrimaryShape;
 
@@ -252,7 +261,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(SecondaryShape),
-    }
+    },
   })
   secondaryShape?: SecondaryShape | null;
 
@@ -275,7 +284,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(Category),
-    }
+    },
   })
   category?: Category | null;
 
@@ -318,7 +327,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(Rarity),
-    }
+    },
   })
   rarity?: Rarity;
 
@@ -350,7 +359,7 @@ export class Item extends Entity implements AcdbItem {
   @property.array(String, {
     jsonSchema: {
       enum: enumValues(Color),
-    }
+    },
   })
   colors?: Color[];
 
@@ -373,7 +382,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(Weather),
-    }
+    },
   })
   weather?: Weather;
 
@@ -416,7 +425,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(Gender),
-    }
+    },
   })
   gender?: Gender;
 
@@ -424,7 +433,7 @@ export class Item extends Entity implements AcdbItem {
     type: String,
     jsonSchema: {
       enum: enumValues(Personality),
-    }
+    },
   })
   personality?: Personality;
 
@@ -441,7 +450,7 @@ export class Item extends Entity implements AcdbItem {
   @property.array(String, {
     jsonSchema: {
       enum: enumValues(Style),
-    }
+    },
   })
   styles?: Style[];
 
@@ -453,7 +462,7 @@ export class Item extends Entity implements AcdbItem {
   @property.array(String, {
     jsonSchema: {
       enum: enumValues(Source),
-    }
+    },
   })
   source?: Source[];
 

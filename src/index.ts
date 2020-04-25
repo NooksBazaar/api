@@ -8,7 +8,7 @@ export async function main(options: ApplicationConfig = {}) {
   await app.boot();
   if (options.autoMigrate) {
     // FIXME: this isn't safe once we start storing real user data
-    await app.migrateSchema({ existingSchema: "drop" });
+    await app.migrateSchema({existingSchema: 'drop'});
   }
   await app.start();
 
