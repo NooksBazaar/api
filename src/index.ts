@@ -7,7 +7,8 @@ export async function main(options: ApplicationConfig = {}) {
   const app = new NooksBazaarApplication(options);
   await app.boot();
   if (options.autoMigrate) {
-    await app.migrateSchema();
+    // FIXME: this isn't safe once we start storing real user data
+    await app.migrateSchema({ existingSchema: "drop" });
   }
   await app.start();
 

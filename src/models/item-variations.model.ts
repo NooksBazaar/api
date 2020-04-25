@@ -6,7 +6,7 @@ import {
   Theme,
   Variant,
   VariantID,
-} from '@nooksbazaar/acdb/items';
+} from '@nooksbazaar/acdb/all';
 import {enumValues} from '../util/enum-values';
 
 @model()
@@ -59,7 +59,7 @@ export class ItemVariations extends Entity implements Variant {
   @property({
     type: String,
   })
-  image: string | null;
+  image?: string;
 
   @property({
     type: Number,

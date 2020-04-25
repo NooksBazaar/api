@@ -53,10 +53,10 @@ export class NooksBazaarApplication extends BootMixin(
     await super.migrateSchema(options);
 
     const itemRepo = await this.getRepository(ItemRepository);
-    const items = require('@nooksbazaar/acdb/items.json');
+    const items = require('@nooksbazaar/acdb/all.json');
 
     for (const item of items) {
-      const filter = {where: {name: item.name}};
+      const filter = {where: {name: item.name, sourceSheet: item.sourceSheet}};
       const existingItem = await itemRepo.findOne(filter);
 
       if (existingItem) {
