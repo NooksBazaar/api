@@ -1,4 +1,4 @@
-import {Request, RestBindings, get, ResponseObject} from '@loopback/rest';
+import {Request, RestBindings, get, ResponseObject, oas} from '@loopback/rest';
 import {inject} from '@loopback/context';
 
 /**
@@ -31,6 +31,7 @@ const PING_RESPONSE: ResponseObject = {
 /**
  * A simple controller to bounce back http requests
  */
+@oas.tags('Ping')
 export class PingController {
   constructor(@inject(RestBindings.Http.REQUEST) private req: Request) {}
 

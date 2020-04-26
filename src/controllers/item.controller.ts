@@ -6,10 +6,11 @@ import {
   repository,
   Where,
 } from '@loopback/repository';
-import {param, get, getModelSchemaRef, Response, HttpErrors} from '@loopback/rest';
+import {param, get, getModelSchemaRef, Response, HttpErrors, api, oas} from '@loopback/rest';
 import {Item} from '../models';
 import {ItemRepository} from '../repositories';
 
+@oas.tags('Items')
 export class ItemController {
   constructor(
     @repository(ItemRepository)
