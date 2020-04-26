@@ -6,7 +6,7 @@ import {
   repository,
   Where,
 } from '@loopback/repository';
-import {param, get, getModelSchemaRef} from '@loopback/rest';
+import {param, get, getModelSchemaRef, Response, HttpErrors} from '@loopback/rest';
 import {Item} from '../models';
 import {ItemRepository} from '../repositories';
 
@@ -32,6 +32,26 @@ export class ItemController {
     responses: {
       '200': {
         description: 'Array of Item model instances',
+        headers: {
+          'Pagination-Count': {
+            description: 'Total number of items',
+            schema: {
+              type: 'integer',
+            }
+          },
+          'Pagination-Offset': {
+            description: 'Current offset',
+            schema: {
+              type: 'integer',
+            }
+          },
+          'Pagination-Max-Limit': {
+            description: 'Maximum number of returned items allowed',
+            schema: {
+              type: 'integer',
+            }
+          },
+        },
         content: {
           'application/json': {
             schema: {
@@ -43,7 +63,22 @@ export class ItemController {
       },
     },
   })
-  async find(@param.filter(Item) filter?: Filter<Item>): Promise<Item[]> {
+  async find(@param.filter(Item) filter: Filter<Item> = { limit: 100 }, res?: Response): Promise<Item[]> {
+    const {count} = await this.count(filter?.where);
+    const offset = (filter.offset ?? filter.skip) ?? 0;
+
+    if ((filter.limit || 0) > 100) {
+      throw new HttpErrors.BadRequest('Pagination limit is higher than the allowed value of 100');
+    }
+
+    if (!filter.limit) {
+      filter.limit = 100;
+    }
+
+    res?.setHeader('Pagination-Count', count);
+    res?.setHeader('Pagination-Offset', offset);
+    res?.setHeader('Pagination-Max-Limit', 100);
+
     return this.itemRepository.find(filter);
   }
 

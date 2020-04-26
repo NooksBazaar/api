@@ -54,7 +54,7 @@
     "@loopback/rest": "^3.2.1",
     "@loopback/rest-explorer": "^2.0.4",
     "@loopback/service-proxy": "^2.0.4",
-    "@nooksbazaar/acdb": "^0.2.1",
+    "@nooksbazaar/acdb": "^0.2.3",
     "axios": "^0.19.2",
     "googleapis": "^39.2.0",
     "loopback-connector-mongodb": "^4.2.0",
@@ -74,5 +74,8 @@
     "eslint-plugin-mocha": "^6.3.0",
     "ts-node": "^8.8.2",
     "typescript": "~3.8.3"
+  },
+  "volta": {
+    "node": "12.16.2"
   }
 }

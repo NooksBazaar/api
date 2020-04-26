@@ -8,6 +8,7 @@ import {
   Color,
   CurtainType,
   Gender,
+  Hobby,
   Item as AcdbItem,
   LightingType,
   PaneType,
@@ -80,11 +81,6 @@ export class Item extends Entity implements AcdbItem {
     type: Boolean,
   })
   patternCustomize?: boolean | null;
-
-  @property({
-    type: Number,
-  })
-  kitCost?: number | null;
 
   @property({
     type: String,
@@ -460,6 +456,19 @@ export class Item extends Entity implements AcdbItem {
 
   @property.array(String)
   source?: string[];
+
+  @property({
+    type: String,
+    jsonSchema: {
+      enum: enumValues(Hobby),
+    },
+  })
+  hobby: Hobby;
+
+  @property({
+    type: String,
+  })
+  type: string;
 
   constructor(data?: Partial<Item>) {
     super(data);
