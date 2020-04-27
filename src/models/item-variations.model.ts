@@ -114,6 +114,16 @@ export class ItemVariations extends Entity implements Variant {
   })
   inventoryImage: string;
 
+  @property({
+    type: String,
+  })
+  framedImage?: null | string;
+
+  @property({
+    type: String,
+  })
+  albumImage?: null | string;
+
   constructor(data?: Partial<ItemVariations>) {
     super(data);
   }

@@ -263,16 +263,6 @@ export class Item extends Entity implements AcdbItem {
   @property({
     type: String,
   })
-  framedImage?: null | string;
-
-  @property({
-    type: String,
-  })
-  albumImage?: null | string;
-
-  @property({
-    type: String,
-  })
   inventoryImage?: string;
 
   @property({
