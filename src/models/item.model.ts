@@ -470,6 +470,26 @@ export class Item extends Entity implements AcdbItem {
   })
   type: string;
 
+  @property({
+    type: String,
+  })
+  critterpediaImage: string;
+
+  @property({
+    type: String,
+  })
+  furnitureImage: string;
+
+  @property({
+    type: String,
+  })
+  iconFilename: string;
+
+  @property({
+    type: String,
+  })
+  iconImage: string;
+
   constructor(data?: Partial<Item>) {
     super(data);
   }

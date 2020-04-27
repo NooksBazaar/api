@@ -54,7 +54,7 @@
     "@loopback/rest": "^3.2.1",
     "@loopback/rest-explorer": "^2.0.4",
     "@loopback/service-proxy": "^2.0.4",
-    "@nooksbazaar/acdb": "^0.2.3",
+    "@nooksbazaar/acdb": "^0.2.4",
     "axios": "^0.19.2",
     "googleapis": "^39.2.0",
     "loopback-connector-mongodb": "^4.2.0",

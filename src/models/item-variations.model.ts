@@ -109,6 +109,11 @@ export class ItemVariations extends Entity implements Variant {
   })
   variation: number | string | null;
 
+  @property({
+    type: String,
+  })
+  inventoryImage: string;
+
   constructor(data?: Partial<ItemVariations>) {
     super(data);
   }
