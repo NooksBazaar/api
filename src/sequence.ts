@@ -29,6 +29,8 @@ export class MySequence implements SequenceHandler {
       const args = await this.parseParams(request, route);
       const result = await this.invoke(route, [...args, response]);
 
+      response.setHeader('Access-Control-Expose-Headers', 'Pagination-Count, Pagination-Max-Limit, Pagination-Offset')
+
       this.cacheControl(result, response);
 
       this.send(response, result);
